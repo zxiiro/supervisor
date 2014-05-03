@@ -9,6 +9,6 @@ install:
   - sudo chmod +x /usr/sbin/policy-rc.d
   - sudo apt-get install -qy lxc lxc-docker
 script:
-  - docker -d &
-  - docker run --rm ubuntu /bin/echo hello world
+  - sudo docker -d &
+  - sudo docker run -rm ubuntu /bin/echo hello world
 
