@@ -5,7 +5,9 @@ install:
   - sudo apt-get -y install python-software-properties
   - sudo add-apt-repository ppa:dotcloud/lxc-docker -y
   - sudo apt-get update
-  - sudo apt-get install -qy lxc-docker
+  - echo exit 101 | sudo tee /usr/sbin/policy-rc.d
+  - sudo chmod +x /usr/sbin/policy-rc.d
+  - sudo apt-get install -qy lxc lxc-docker
 script:
   - docker -d &
   - docker run --rm ubuntu /bin/echo hello world
